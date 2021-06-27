@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: #beaee2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #cdf0ea;
+  font-weight: 400;
+}
+
+.tablero {
+  width: 70%;
+  height: 80vh;
+
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 7px;
+}
+
+.area-tarjeta,
+.cara {
+  width: 100%;
+  height: 100%;
+  transition: transform ease 0.3s;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.area-tarjeta {
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.area-tarjeta:hover {
+  transform: rotateY(180deg);
+}
+
+.cara {
+  position: absolute;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  backface-visibility: hidden;
+}
+
+.trasera {
+  background: #558776;
+
+  font-size: 350%;
+  color: #15aabf;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delantera {
+  background: #ff7600;
+  transform: rotateY(180deg);
+  font-size: 350%;
+  color: #ffa900;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
