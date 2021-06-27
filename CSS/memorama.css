@@ -7,11 +7,9 @@
 body {
   font-family: "Roboto", sans-serif;
   background: #beaee2;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
 }
 
 h1 {
@@ -20,9 +18,32 @@ h1 {
   font-weight: 400;
 }
 
-.tablero {
-  width: 70%;
-  height: 80vh;
+/* Tablero general */
+
+.tablero-general {
+  width: 100%;
+  max-width: 1366px;
+  height: 100%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* Tablero de inicio */
+
+.tablero-inicio {
+  width: 30vw;
+  height: 90%;
+  background: #444444;
+  border-radius: 10px;
+}
+
+/* Tablero de juego */
+
+.tablero-juego {
+  width: 55%;
+  height: 70%;
 
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -44,14 +65,13 @@ h1 {
   transform-style: preserve-3d;
 }
 
-.area-tarjeta:hover {
+/* .area-tarjeta:hover {
   transform: rotateY(180deg);
-}
+} */
 
 .cara {
   position: absolute;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-  backface-visibility: hidden;
 }
 
 .trasera {
