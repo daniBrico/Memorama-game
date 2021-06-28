@@ -65,12 +65,9 @@ h1 {
   transform-style: preserve-3d;
 }
 
-/* .area-tarjeta:hover {
-  transform: rotateY(180deg);
-} */
-
 .cara {
   position: absolute;
+  backface-visibility: hidden;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -94,4 +91,12 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.rotar {
+  transform: rotateY(180deg);
+}
+
+.rotarCero {
+  transform: rotateY(0deg);
 }
