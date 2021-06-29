@@ -12,12 +12,6 @@ body {
   height: 100vh;
 }
 
-h1 {
-  margin-bottom: 20px;
-  color: #cdf0ea;
-  font-weight: 400;
-}
-
 /* Tablero general */
 
 .tablero-general {
@@ -37,6 +31,45 @@ h1 {
   height: 90%;
   background: #444444;
   border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+h1 {
+  color: #cdf0ea;
+  font-weight: 400;
+}
+
+.btn-jugar {
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-style: none;
+  cursor: pointer;
+  background: #558776;
+  color: #cdf0ea;
+  border-radius: 10px;
+  transition: all ease 0.3s;
+}
+
+.btn-jugar-deshabilitar {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.btn-jugar:hover {
+  color: #558776;
+  background: #cdf0ea;
+}
+
+.reloj {
+  font-size: 40px;
+  color: #cdf0ea;
 }
 
 /* Tablero de juego */
@@ -99,4 +132,53 @@ h1 {
 
 .rotarCero {
   transform: rotateY(0deg);
+}
+
+.deshabilitarClick {
+  pointer-events: none;
+}
+
+/* Ventana Modal */
+
+.modal-container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  transition: transform ease 0.3s;
+  transform: translatey(-200%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  width: 40%;
+  height: 50%;
+  padding: 30px;
+  background: #beaee2;
+  overflow: hidden;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+h2 {
+  color: #558776;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.modal-open {
+  transform: translatey(0%);
+}
+
+.modal-closed {
+  transform: translateY(-200%);
 }

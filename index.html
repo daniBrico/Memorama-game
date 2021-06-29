@@ -10,15 +10,17 @@
   <!-- Link Google-Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
-  <title>Memorama!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,400&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
   <main class="tablero-general">
     <div class="tablero-inicio">
-      <h1>Memorama!</h1>
-      <input id="btn-comenzar-juego" type="button" value="Comenzar juego">
+      <h1 class="titulo">Memorama!</h1>
+      <input class="btn-jugar" id="btn-comenzar-juego" type="button" value="Iniciar">
+      <div id="reloj">
+      </div>
     </div>
     <div class="tablero-juego">
       <div class="area-tarjeta">
@@ -26,10 +28,8 @@
           <i class="fas fa-play"></i>
         </div>
         <div class="cara delantera" id="1">
-
         </div>
       </div>
-
       <div class="area-tarjeta">
         <div class="cara trasera" data-id="2">
           <i class="fas fa-play"></i>
@@ -169,6 +169,15 @@
           <i class="fas fa-play"></i>
         </div>
         <div class="cara delantera" id="24"></div>
+      </div>
+    </div>
+    <div class="modal-container">
+      <div class="modal">
+        <h2>Felicitaciones! Tu tiempo es:</h2>
+        <div id="tiempo">
+
+        </div>
+        <input class="btn-jugar" id="volver-jugar" type="button" value="Volver a jugar">
       </div>
     </div>
   </main>
