@@ -5,32 +5,31 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
-  background: #beaee2;
-
   width: 100vw;
   height: 100vh;
+  font-family: "Roboto", sans-serif;
+  background: #beaee2;
 }
 
 /* Tablero general */
 
 .tablero-general {
-  width: 100%;
-  max-width: 1366px;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
 }
 
 /* Tablero de inicio */
 
 .tablero-inicio {
-  width: 30vw;
-  height: 90%;
+  width: 80%;
+  height: 130px;
   background: #444444;
   border-radius: 10px;
+  margin-top: 20px;
 
   display: flex;
   flex-direction: column;
@@ -41,13 +40,14 @@ body {
 h1 {
   color: #cdf0ea;
   font-weight: 400;
+  font-size: 20px;
 }
 
 .btn-jugar {
-  width: 200px;
-  height: 50px;
-  font-size: 20px;
-  font-weight: 700;
+  width: 50%;
+  height: 30px;
+  font-size: 15px;
+  font-weight: 400;
   letter-spacing: 0.5px;
   border-style: none;
   cursor: pointer;
@@ -68,19 +68,18 @@ h1 {
 }
 
 .reloj {
-  font-size: 40px;
+  font-size: 20px;
   color: #cdf0ea;
 }
 
 /* Tablero de juego */
 
 .tablero-juego {
-  width: 55%;
-  height: 70%;
+  margin-top: 50px;
 
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 65px);
+  grid-template-rows: repeat(6, 55px);
   gap: 7px;
 }
 
@@ -101,14 +100,14 @@ h1 {
 .cara {
   position: absolute;
   backface-visibility: hidden;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
 }
 
 .trasera {
-  background: #558776;
+  background: #d7b19d;
 
-  font-size: 350%;
-  color: #15aabf;
+  font-size: 190%;
+  color: #c84b31;
 
   display: flex;
   justify-content: center;
@@ -116,10 +115,10 @@ h1 {
 }
 
 .delantera {
-  background: #ff7600;
+  background: #d7b19d;
   transform: rotateY(180deg);
-  font-size: 350%;
-  color: #ffa900;
+  font-size: 190%;
+  color: #c84b31;
 
   display: flex;
   justify-content: center;
@@ -148,7 +147,7 @@ h1 {
   left: 0;
   background: rgba(0, 0, 0, 0.5);
   transition: transform ease 0.3s;
-  transform: translatey(-200%);
+  transform: translatex(-100%);
 
   display: flex;
   justify-content: center;
@@ -156,12 +155,12 @@ h1 {
 }
 
 .modal {
-  width: 40%;
-  height: 50%;
-  padding: 30px;
+  width: 80%;
+  height: 200px;
+  padding: 5px;
   background: #beaee2;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 10px;
 
   display: flex;
   flex-direction: column;
@@ -171,14 +170,188 @@ h1 {
 
 h2 {
   color: #558776;
-  font-size: 30px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 .modal-open {
-  transform: translatey(0%);
+  transform: translatex(0%);
 }
 
 .modal-closed {
-  transform: translateY(-200%);
+  transform: translatex(-100%);
+}
+
+@media only screen and (min-width: 600px) {
+  /* Tablero de inicio */
+
+  .tablero-inicio {
+    width: 70%;
+    height: 150px;
+  }
+
+  .btn-jugar {
+    width: 40%;
+    height: 45px;
+    font-size: 18px;
+  }
+
+  .reloj {
+    font-size: 25px;
+    color: #cdf0ea;
+  }
+
+  /* Tablero de juego */
+
+  .tablero-juego {
+    width: 60%;
+    height: 60%;
+    margin-top: 20px;
+
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 7px;
+  }
+
+  .cara {
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .trasera {
+    font-size: 200%;
+  }
+
+  .delantera {
+    font-size: 250%;
+  }
+
+  /* Ventana Modal */
+
+  .modal {
+    width: 60%;
+    height: 230px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  /* Tablero general */
+
+  .tablero-general {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  /* Tablero de inicio */
+
+  .tablero-inicio {
+    width: 30%;
+    height: 80%;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  .btn-jugar {
+    width: 60%;
+    height: 45px;
+    font-size: 17px;
+    font-weight: 700;
+  }
+
+  .reloj {
+    font-size: 30px;
+  }
+
+  /* Tablero de juego */
+
+  .tablero-juego {
+    width: 60%;
+    height: 65%;
+    margin-top: 0px;
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  .cara {
+    position: absolute;
+    backface-visibility: hidden;
+    box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .trasera {
+    font-size: 250%;
+  }
+
+  .delantera {
+    font-size: 250%;
+  }
+
+  /* Ventana Modal */
+  .modal {
+    width: 45%;
+    height: 250px;
+  }
+
+  h2 {
+    font-size: 25px;
+    font-weight: 700;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  h1 {
+    font-size: 35px;
+  }
+
+  .btn-jugar {
+    width: 55%;
+    height: 65px;
+    font-size: 23px;
+    font-weight: 700;
+  }
+
+  .reloj {
+    font-size: 40px;
+  }
+
+  /* Tablero de juego */
+
+  .tablero-juego {
+    width: 60%;
+    height: 70%;
+    margin-top: 0px;
+  }
+
+  .cara {
+    position: absolute;
+    backface-visibility: hidden;
+    box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .trasera {
+    font-size: 300%;
+  }
+
+  .delantera {
+    font-size: 350%;
+  }
+
+  /* Ventana Modal */
+  .modal {
+    width: 45%;
+    height: 300px;
+  }
+
+  h2 {
+    font-size: 30px;
+    font-weight: 700;
+  }
 }
